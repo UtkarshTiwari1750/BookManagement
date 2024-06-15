@@ -15,7 +15,7 @@ const BooksSection = ({ Data }) => {
 
     const deleteBook = async (book) => {
         try {
-            await axios.delete(`http://localhost:1000/api/v1/deleteBook/${book._id}`);
+            await axios.delete(`https://bookmanagement-p0fo.onrender.com/api/v1/deleteBook/${book._id}`);
             setBooks(prevBooks => prevBooks.filter(item => item._id !== book._id));
             alert("Book deleted successfully!");
         } catch (error) {
@@ -45,7 +45,7 @@ const BooksSection = ({ Data }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:1000/api/v1/updateBook/${selectedBook._id}`, updatedBookData);
+            const response = await axios.put(`https://bookmanagement-p0fo.onrender.com/api/v1/updateBook/${selectedBook._id}`, updatedBookData);
             alert(response.data.message);
             // Update the state with the updated book data
             setBooks(prevBooks => prevBooks.map(item => (item._id === selectedBook._id ? { ...item, ...updatedBookData } : item)));

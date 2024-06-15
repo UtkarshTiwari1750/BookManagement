@@ -10,7 +10,7 @@ const Books = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:1000/api/v1/getBooks");
+                const response = await axios.get("https://bookmanagement-p0fo.onrender.com/api/v1/getBooks");
                 setData(response.data.books);
             } catch (error) {
                 setError(error);

@@ -11,7 +11,7 @@ const AddBooks = () => {
 
     const submit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:1000/api/v1/add", Data).then((res) => alert(res.data.message));
+        await axios.post("https://bookmanagement-p0fo.onrender.com/api/v1/add", Data).then((res) => alert(res.data.message));
     };
 
     console.log(Data);
